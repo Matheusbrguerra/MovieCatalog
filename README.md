@@ -1,6 +1,6 @@
 # MovieCatalog
 
-####h4 Cadastro e autenticação dos usuários
+<h4> Cadastro e autenticação dos usuários</h4>
 
 |Rotas   |Tipo|Descrição|
 |--------|------|--------|
