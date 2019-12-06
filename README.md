@@ -1,6 +1,6 @@
 # MovieCatalog
 
-|Rotas   |Tipo|
-|--------|------|
-|"/user" |POST|
-|"/session"|POST|
+|Rotas   |Tipo|Descrição|
+|--------|------|--------|
+|"/user" |POST| Rota responsável pelo cadastro dos usuários|
+|"/session"|POST| Rota responsável pelo login/autenticação dos usuários retorna um token|
