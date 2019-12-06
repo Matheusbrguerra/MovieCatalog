@@ -9,6 +9,8 @@
 |"/user"   |POST  |Rota responsável pelo cadastro dos usuários|
 |"/session"|POST  |Rota responsável pelo login/autenticação dos usuários retorna um token|
 
+<h2>⚠️ Todas essas rotas abaixo só conseguem ser acessadas com o header 'Authorization' e o 'token'</h2>
+
 <h4> CRUD dos Atores</h4>
 
 |Rotas     |Tipo  |Descrição|
