@@ -1,5 +1,5 @@
-import app from './app'
+import app from "./app";
 
-const port = 3333
+const port = 8080;
 
-app.listen(port,()=> console.log(`O servidor está rodando na porta ${port}`))
+app.listen(port, () => console.log(`O servidor está rodando na porta ${port}`));
