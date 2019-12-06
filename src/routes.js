@@ -32,4 +32,7 @@ routes.put("/directors/:id", DirectorController.update);
 //Rotas de CRUD de Filmes
 routes.post("/movies", MovieController.store);
 routes.get("/movies", MovieController.index);
+routes.put("/movies/:id", MovieController.update);
+routes.delete("/movies/:id", MovieController.delete);
+
 export default routes;
