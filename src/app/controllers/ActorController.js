@@ -55,6 +55,12 @@ class ActorController {
       message: `Actor with id:${id} and name: ${actor.name} has been changed to ${name}`
     });
   }
+  async single(req, res) {
+    const { id } = req.params;
+    const actor = await Actor.findOne({ where: { id } });
+
+    return res.json(actor);
+  }
 }
 
 export default new ActorController();

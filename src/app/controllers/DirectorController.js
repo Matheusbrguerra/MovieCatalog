@@ -41,7 +41,7 @@ class DirectorController {
     const director = await Director.findByPk(id);
 
     if (!director) {
-      return res.status(400).json({ error: "Actor does not exist !!" });
+      return res.status(400).json({ error: "Director does not exist !!" });
     }
 
     if (director.name === name) {
@@ -49,11 +49,18 @@ class DirectorController {
         .status(400)
         .json({ error: "New director name is the same of older name" });
     }
+
     await Director.update({ name }, { where: { id } });
 
     return res.json({
       message: `Director with id:${id} and name: ${director.name} has been changed to ${name}`
     });
+  }
+  async single(req, res) {
+    const { id } = req.params;
+    const director = await Director.findOne({ where: { id } });
+
+    return res.json(director);
   }
 }
 

@@ -3,6 +3,7 @@ import Actor from "../models/Actor";
 import Director from "../models/Director";
 class MovieController {
   async index(req, res) {
+    const { page = 1 } = req.query;
     const movie = await Movie.findAll({
       include: [
         {
@@ -15,7 +16,9 @@ class MovieController {
           as: "director",
           through: { attributes: ["name"] }
         }
-      ]
+      ],
+      limit: 10,
+      offset: (page - 1) * 10
     });
 
     return res.json(movie);
@@ -59,6 +62,27 @@ class MovieController {
     }
 
     await Movie.destroy({ where: { id } });
+
+    return res.json(movie);
+  }
+  async single(req, res) {
+    const { id } = req.params;
+
+    const movie = await Movie.findOne({
+      where: { id },
+      include: [
+        {
+          model: Actor,
+          as: "actor",
+          through: { attributes: ["name"] }
+        },
+        {
+          model: Director,
+          as: "director",
+          through: { attributes: ["name"] }
+        }
+      ]
+    });
 
     return res.json(movie);
   }
